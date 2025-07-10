@@ -118,7 +118,7 @@ capacity-planning-system/
 
 ## Development
 
-See [CLAUDE.md](CLAUDE.md) for detailed implementation instructions and architecture documentation.
+See [IMPLEMENTATION.md](IMPLEMENTATION.md) for detailed implementation instructions and architecture documentation.
 
 ## Testing
 

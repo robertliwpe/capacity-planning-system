@@ -80,7 +80,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Metrics Calculator**: Statistical analysis and aggregation of performance data
 - **Pattern Matcher**: Usage pattern identification and classification
 - **Configuration Scorer**: Multi-factor scoring algorithm for configuration matching
-- **Recommendation Engine**: AI-driven configuration recommendation system
+- **Recommendation Engine**: Automated configuration recommendation system
   - Support for 68 predefined configurations (p0-p10 with variants)
   - Specialization detection (php, db, dense)
   - Size variants (standard, xl)
