@@ -14,9 +14,10 @@ An intelligent local system for generating point-in-time capacity recommendation
 
 ### Prerequisites
 
-- Python 3.9+
+- Python 3.8+
 - Git
 - 8GB RAM minimum (16GB recommended for GUI)
+- Streamlit (for GUI mode)
 
 ### Installation
 
@@ -32,6 +33,9 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 # Install dependencies
 pip install -r requirements.txt
 
+# Install the package in development mode
+pip install -e .
+
 # Copy environment template
 cp .env.example .env
 # Edit .env with your configuration
@@ -42,24 +46,44 @@ cp .env.example .env
 #### CLI Mode
 
 ```bash
-# Basic analysis
-python -m capacity_planner analyze --data-dir /path/to/data
+# Basic analysis with local data files
+capacity-planner analyze --data-dir /path/to/data
+
+# Analysis with SSH pod data
+capacity-planner analyze --pods 123 456 --installs site1 site2
 
 # With specific configuration options
-python -m capacity_planner analyze \
+capacity-planner analyze \
   --data-dir /path/to/data \
   --output report.md \
-  --confidence-threshold 0.8
+  --confidence-threshold 0.8 \
+  --format markdown
 
 # Interactive mode
-python -m capacity_planner interactive
+capacity-planner interactive
+
+# Test SSH connection
+capacity-planner test-ssh --pod 123
+
+# Analyze specific pods
+capacity-planner analyze-pods --pods 123 456 --installs site1 site2
+```
+
+#### Alternative CLI Access
+
+```bash
+# Using Python module
+python -m capacity_planner analyze --data-dir /path/to/data
+
+# Using alternative entry point
+cp-cli analyze --data-dir /path/to/data
 ```
 
 #### GUI Mode
 
 ```bash
-# Launch the GUI
-python -m capacity_planner gui
+# Launch the Streamlit GUI
+streamlit run capacity_planner/gui/app.py
 ```
 
 The GUI provides:
